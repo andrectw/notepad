@@ -4,6 +4,8 @@ FROM openjdk:8-alpine
 # File Author / Maintainer
 MAINTAINER Jorge Acetozi
 
+RUN echo "Using docker image for Notepad"
+
 # Define default environment variables
 ENV NOTEPAD_HOME=/opt/notepad
 ENV NOTEPAD_BINARIES=/opt/notepad/bin
@@ -22,6 +24,7 @@ ADD entrypoint.sh $NOTEPAD_BINARIES/entrypoint.sh
 
 # Give permissions
 RUN chmod 755 $NOTEPAD_BINARIES/entrypoint.sh
+
 
 # Expose default servlet container port
 EXPOSE 8080
